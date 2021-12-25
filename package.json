@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vipway/vips-utils.git"
+    "url": "git+https://github.com/vipway/vipjs-utils.git"
   },
   "keywords": [
     "utils",
@@ -34,9 +34,9 @@
   "author": "Cody",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vipway/vips-utils/issues"
+    "url": "https://github.com/vipway/vipjs-utils/issues"
   },
-  "homepage": "https://github.com/vipway/vips-utils#readme",
+  "homepage": "https://github.com/vipway/vipjs-utils#readme",
   "peerDependencies": {
     "eslint": ">= 3"
   },
