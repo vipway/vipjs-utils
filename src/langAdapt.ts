@@ -1,45 +1,45 @@
 export type langType =
-	'zh-CN' |
-	'zh-TW' |
-	'ar' |
-	'de' |
-	'en' |
-	'es' |
-	'fr' |
-	'id' |
-	'it' |
-	'ja' |
-	'ko' |
-	'nl' |
-	'po' |
-	'pt' |
-	'ro' |
-	'ru' |
-	'sv' |
-	'th' |
-	'tr' |
-	'vi'
+  | 'zh-CN'
+  | 'zh-TW'
+  | 'ar'
+  | 'de'
+  | 'en'
+  | 'es'
+  | 'fr'
+  | 'id'
+  | 'it'
+  | 'ja'
+  | 'ko'
+  | 'nl'
+  | 'po'
+  | 'pt'
+  | 'ro'
+  | 'ru'
+  | 'sv'
+  | 'th'
+  | 'tr'
+  | 'vi'
 export const langMap = {
-	'zh-CN': '简体中文',
-	'zh-TW': '繁体中文',
-	'ar': 'العربية',
-	'de': 'Deutsch',
-	'en': 'English',
-	'es': 'Español',
-	'fr': 'Français',
-	'id': 'Indonesia',
-	'it': 'Italiano',
-	'ja': '日本語',
-	'ko': '한국어韩语',
-	'nl': 'Nederlands',
-	'po': 'Polski',
-	'pt': 'Português',
-	'ro': 'română',
-	'ru': 'Русский',
-	'sv': 'Svenska',
-	'th': 'ไทย泰语',
-	'tr': 'Türkçe',
-	'vi': 'Tiếng Việt'
+  'zh-CN': '简体中文',
+  'zh-TW': '繁体中文',
+  ar: 'العربية',
+  de: 'Deutsch',
+  en: 'English',
+  es: 'Español',
+  fr: 'Français',
+  id: 'Indonesia',
+  it: 'Italiano',
+  ja: '日本語',
+  ko: '한국어韩语',
+  nl: 'Nederlands',
+  po: 'Polski',
+  pt: 'Português',
+  ro: 'română',
+  ru: 'Русский',
+  sv: 'Svenska',
+  th: 'ไทย泰语',
+  tr: 'Türkçe',
+  vi: 'Tiếng Việt'
 }
 
 /**
@@ -51,30 +51,30 @@ export const langMap = {
  * @date: 2021-10-24
  */
 const langAdapt = (lang: string): langType => {
-	if (typeof lang !== 'string') {
-		throw new Error('lang is not a string')
-	}
-	lang = lang.toLowerCase().trim()
-	//中文
-	if (lang.indexOf('zh-') !== -1) {
-		//某些安卓设备语言返回的是zh-rCN，zh-rTW
-		if (lang.indexOf('cn') !== -1) {
-			lang = 'zh-CN'
-		} else {
-			lang = 'zh-TW'
-		}
-	} else if (lang.indexOf('ja') !== -1 || lang.indexOf('jp') !== -1) {
-		//日语
-		lang = 'ja'
-	} else {
-		//其他语言
-		//中线处理
-		if (lang.indexOf('-') !== -1) {
-			lang = lang.split('-')[0]
-		}
-	}
+  if (typeof lang !== 'string') {
+    throw new Error('lang is not a string')
+  }
+  lang = lang.toLowerCase().trim()
+  // 中文
+  if (lang.indexOf('zh-') !== -1) {
+    // 某些安卓设备语言返回的是zh-rCN，zh-rTW
+    if (lang.indexOf('cn') !== -1) {
+      lang = 'zh-CN'
+    } else {
+      lang = 'zh-TW'
+    }
+  } else if (lang.indexOf('ja') !== -1 || lang.indexOf('jp') !== -1) {
+    // 日语
+    lang = 'ja'
+  } else {
+    // 其他语言
+    // 中线处理
+    if (lang.indexOf('-') !== -1) {
+      lang = lang.split('-')[0]
+    }
+  }
 
-	return lang as langType
+  return lang as langType
 }
 
 export default langAdapt

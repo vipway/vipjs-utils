@@ -3,17 +3,19 @@
  * @param url
  */
 
-const imageLoaded = (url: string): Promise<{ width: number, height: number }> => {
+const imageLoaded = (
+  url: string
+): Promise<{ width: number; height: number }> => {
   return new Promise((resolve, reject) => {
     let img = new Image()
     img.onload = function () {
       resolve({
         width: img.width,
-        height: img.height,
+        height: img.height
         // todo:添加大小，图片类型等信息
       }) // real_width,real_height
 
-      img = (null as any)
+      img = null as any
     }
     img.onerror = function () {
       reject('load image fail')

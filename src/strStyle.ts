@@ -7,11 +7,11 @@
  * @date: 2021-10-24
  */
 const strStyle = (styleObj: any): string => {
-	let cssStr = ''
-	Object.keys(styleObj).forEach(key => {
-		if (styleObj.hasOwnProperty(key)) cssStr += `${key}:${styleObj[key]};`
-	})
-	return cssStr
+  let cssStr = ''
+  Object.keys(styleObj).forEach(key => {
+    if (styleObj.hasOwnProperty(key)) cssStr += `${key}:${styleObj[key]};`
+  })
+  return cssStr
 }
 
 export default strStyle

@@ -7,19 +7,23 @@ import camelCase from './camelCase'
  * @author: Cody
  * @date: 2021-10-24
  */
-const getStyle = (element: HTMLElement, styleName: keyof CSSStyleDeclaration): string => {
-	if (!element || !styleName) return ''
-	styleName = camelCase(styleName as string) as keyof CSSStyleDeclaration
-	if (styleName === 'float') {
-		styleName = 'cssFloat'
-	}
-	try {
-		const computed = document['defaultView']!.getComputedStyle(element, '')
-		return element.style[styleName] || computed ? computed[styleName] as string : ''
-	} catch (e) {
-		return element.style[styleName] as string
-	}
+const getStyle = (
+  element: HTMLElement,
+  styleName: keyof CSSStyleDeclaration
+): string => {
+  if (!element || !styleName) return ''
+  styleName = camelCase(styleName as string) as keyof CSSStyleDeclaration
+  if (styleName === 'float') {
+    styleName = 'cssFloat'
+  }
+  try {
+    const computed = document.defaultView!.getComputedStyle(element, '')
+    return element.style[styleName] || computed
+      ? (computed[styleName] as string)
+      : ''
+  } catch (e) {
+    return element.style[styleName] as string
+  }
 }
-
 
 export default getStyle

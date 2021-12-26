@@ -15,4 +15,4 @@ export interface ScrollToOpts {
  * @param transition
  * @param onFinish
  */
-export default function (axis: "x" | "y" | undefined, $scroller: HTMLElement, { justify, target, duration, transition, position, }?: ScrollToOpts): Promise<void>;
+export default function (axis: "x" | "y" | undefined, $scroller: HTMLElement, { justify, target, duration, transition, position }?: ScrollToOpts): Promise<void>;

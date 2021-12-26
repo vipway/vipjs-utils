@@ -1,6 +1,6 @@
 .github
 .DS_Store
-.babelrc
+.babelrc.js
 .editorconfig
 .eslintrc.js
 .eslintignore
@@ -22,11 +22,10 @@ examples
 examples/
 example
 example/
-build
-build/
 
 index.html
-config.js
+rollup.config.js
 bower.json
+yarn-lock.json
 package-lock.json
 selenium-debug.log

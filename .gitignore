@@ -7,6 +7,9 @@ yarn-error.log*
 /www/
 /platforms/
 /lib
+/types
+/dist
+/es
 # Editor directories and files
 .idea
 .vscode
